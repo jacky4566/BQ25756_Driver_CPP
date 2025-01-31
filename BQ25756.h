@@ -113,14 +113,15 @@ public:
     void setInterrupts1(byte value); // Use flags1
     void setInterrupts2(byte value); // Use flags2
     void setInterrupts3(byte value); // Use flags3
-    //  TODO: Read Charger Flags 0x25 0x26 0x27
+                                     //  TODO: Read Charger Flags 0x25 0x26 0x27
 
-private:
-    void safeWriteBool1B(byte addr, byte mask, bool en);
     void busWrite1B(byte addr, byte value);
     void busWrite2B(byte addr, uint16_t value);
     byte busRead1B(byte addr);
     uint16_t busRead2B(byte addr);
+
+private:
+    void safeWriteBool1B(byte addr, byte mask, bool en);
 };
 
 #endif // BQ25756_DRIVER
